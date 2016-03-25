@@ -1,5 +1,8 @@
 class SectionsController < ApplicationController
 
-  def index
+
+  def show
+    @section = Section.find(:id)
   end
+
 end
