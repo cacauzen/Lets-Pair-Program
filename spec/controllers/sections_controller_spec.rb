@@ -19,11 +19,11 @@ RSpec.describe SectionsController, type: :controller do
     end
   end
 
-  # describe "sections#show action" do
-  #   it "should display a section to a user" do
-  #     new_section = Section.create(name: 'Availabilities')
-  #     get :show, new_section.id
-  #     expect(response).to have_http_status(:success)
-  #   end
-  # end
+  describe "sections#show action" do
+    it "should display a section to a user" do
+      new_section = Section.create(name: 'Availabilities')
+      get :show, id: new_section.id
+      expect(response).to have_http_status(:success)
+    end
+  end
 end
