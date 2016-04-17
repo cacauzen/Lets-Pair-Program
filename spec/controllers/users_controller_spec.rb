@@ -6,7 +6,7 @@ RSpec.describe UsersController, type: :controller do
   describe "users#show action" do
 
     it "should require users to be logged in to see their profile" do
-      get :show
+      get :show, id: 1
       expect(response).to redirect_to new_user_session_path
     end
 
