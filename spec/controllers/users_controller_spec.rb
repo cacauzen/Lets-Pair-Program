@@ -5,10 +5,10 @@ RSpec.describe UsersController, type: :controller do
 
   describe "users#show action" do
 
-    # it "should require users to be logged in to see their profile" do
-    #   get :show
-    #   expect(response).to redirect_to new_user_session_path
-    # end
+    it "should require users to be logged in to see their profile" do
+      get :show
+      expect(response).to redirect_to new_user_session_path
+    end
 
     it "should successfully show profile page for correct user" do
       user = FactoryGirl.create(:user)
@@ -18,6 +18,4 @@ RSpec.describe UsersController, type: :controller do
       expect(response).to have_http_status(:success)
     end
   end
-
-
 end
