@@ -1,7 +1,57 @@
 <div class="splash_five">
         <div class="splashbody">
-            <div class="container">
+          <div class="container">
+            Hash Tables
 
+Just like with arrays, you may think you're already a master of hash tables. While you know about how they work in practice, this lesson will go a bit deeper.
+
+What you should already know
+A hash table (also sometimes called a Dictionary) is a collection of key value pairs.
+In ruby the syntax for hashes looks like hash = { :key => 'value'} or hash = { key: value } (both do identical things).
+•	You can easily extract the right-hand side of the table if you have the key from the left side. So for example hash[:key] would extract the string 'value' from the above hash.
+Hash table lookups are generally fast.
+What you probably don't know!
+Hash tables are called such because how hash tables work with memory. The key undergoes a hashing, which will consistently result in the same number. For example in the example above we could potentially calculate a hash for the value :key by performing the following code in irb
+
+require 'digest'
+Digest::SHA256.hexdigest "key"
+You'll notice that whenever you run that command you get back the same hexadecimal number. In this case 2c70e12b7a0646f92279f427c7b38e7334d8e5389cff167a1dc30e73f826b683.
+
+Hex numbers like this can easily be converted to a real number.
+
+Digest::SHA256.hexdigest("key").to_i(16)
+Which will return a crazy long number. Now in practice how a hash table works is it has a certain number of memory addresses where things can be. Let's say we have 10 addresses. We can take the modulo of 10 to extract which slot of memory this key should go in.
+
+Digest::SHA256.hexdigest("key").to_i(16) % 10
+Each slot of memory points to a separate array of the values (containing the original key and a reference to the value) that exist in the hash table. The reason it needs to contain an array, not the specific item, is because of hash collisions, or two different items who have the same result on the hashing algorithm.
+
+So if we used this algorithm to see which of the 10 arrays a hash key for "Hello World" would be, we could run the same algorithm we used we could run this code:
+
+Digest::SHA256.hexdigest("Hello World").to_i(16) % 10
+And it will be in the fourth position.
+
+The value of the hash table is that it provides a fast way to know exactly where in memory the key lies.
+
+But the gotcha with this, is that it relies on two things being true:
+
+A good hashing algorithm is used to distribute different items equally over the allocated spaces
+The size of the hash table in memory contains as many slots (or more) than the items we have in our database. For example if we have 100000 items to put in a hash table with only 10 slots, lookups won't be fast.
+So in practice hash table lookups happen basically instantly, but if either of the above scenarios occurs, lookups can take a long time. Ruby handles hashing of things pretty magically, so you generally don't need to worry about it, but other languages (like Java) take a more hands-off approach and require programmers to implement a hashCode method (and since developers have to implement the hashing method they're susceptible to doing it incorrectly).
+
+Since many programmers have needed to dabble in Java at some point in their career (it's kind of everywhere), most developers are pretty familiar with these aspects of how hash tables work, even though you don't need to know it for day-to-day coding in ruby.
+
+Assignment
+To bring it full circle, we'll have you solve a problem that is pretty easy to do if you use a hash table.
+
+ Build a method counts the frequency of a specific word in a string of many words.
+First, #downcase all the letters of the string.
+Second, convert all newlines into spaces by using the #gsub method.
+Third, remove all periods, question marks, parentheses and commas using the #gsub method.
+Fourth, convert the string into an array of words using the #split method.
+Fifth, convert the array into a hash of strings and the number of occurrences of the word by using either the #each or #inject method.
+Fact! This is a pretty common problem that is used in tutorials to show people how to solve a problem in a distributed nature (and in record speeds) using Google's MapReduce Algorithm, but most web development positions won't expect people to be skilled at MapReduce.
+
+Starter Kit! Start with our failing tests and implement the solution yourself. Download Starter Kit.
         	</div>
     	</div>
 </div>
