@@ -86,12 +86,12 @@ RSpec.describe PostsController, type: :controller do
       expect(response).to redirect_to new_user_session_path
     end
 
-    it "should redirect to the post detail page if the parent post is not found" do
+    it "should redirect to categories#index if the parent post is not found" do
       user = FactoryGirl.create(:user)
       sign_in user
       post :reply, id: "not a real id", post: {message: "Nice post"}
 
-      expect(response).to redirect_to post_path      
+      expect(response).to redirect_to categories_path      
     end
 
     it "should successfully create a reply to the post" do
