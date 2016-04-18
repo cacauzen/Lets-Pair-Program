@@ -5,8 +5,6 @@ RSpec.describe NotificationMailer, type: :mailer do
     ActionMailer::Base.delivery_method = :test
     ActionMailer::Base.perform_deliveries = true
     ActionMailer::Base.deliveries = []
-    # ActionMailer::Base.default_url_options = {host: 'localhost:3030'}
-    # @request = {host: "localhost:3030"}
     @user = FactoryGirl.create(:user)
     @post = FactoryGirl.create(:post, :user => @user)
     NotificationMailer.post_created(@post).deliver_now
