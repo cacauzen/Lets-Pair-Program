@@ -50,7 +50,7 @@ class PostsController < ApplicationController
   end
 
   def reply_params
-    params.require(:reply).permit(:message)
+    params.require(:post).permit(:message)
   end
 
 end
