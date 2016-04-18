@@ -6,3 +6,13 @@
     <%= @post.message %>
   </p>
 </div>
+
+<hr />
+<div>
+  <% @post.replies.each do |reply| %>
+    <p>
+      <%= reply.message %>
+    </p>
+      -- <%= reply.user.email %>
+  <% end %>
+</div>
