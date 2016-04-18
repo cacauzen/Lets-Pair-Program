@@ -37,7 +37,7 @@ class PostsController < ApplicationController
     @post = Post.find_by_id(params[:id])
 
     if @post.nil?
-      redirect_to categories_path
+      render text: 'Post not found', status: :not_found
     else
       @reply = @post.replies.create(reply_params.merge(user: current_user)) 
       redirect_to post_path(params[:id])
