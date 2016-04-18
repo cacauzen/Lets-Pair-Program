@@ -34,13 +34,13 @@ class PostsController < ApplicationController
   end
 
   def reply
-    @post = Post.find_by_id(:id)
+    @post = Post.find_by_id(params[:id])
 
     if @post.nil?
       redirect_to categories_path
     else
       @reply = @post.replies.create(reply_params.merge(user: current_user)) 
-      redirect_to post_path(:id)
+      redirect_to post_path(params[:id])
     end
   end
 
@@ -50,7 +50,7 @@ class PostsController < ApplicationController
   end
 
   def reply_params
-    params.require(:post).permit(:message)
+    params.require(:reply).permit(:message)
   end
 
 end

@@ -81,7 +81,7 @@ RSpec.describe PostsController, type: :controller do
   describe "posts#reply action" do
     it "should require a user to be logged in" do
       parent_post = FactoryGirl.create(:post)
-      post :reply, id: post, post: {message: "Nice post"}
+      post :reply, id: parent_post, post: {message: "Nice post"}
 
       expect(response).to redirect_to new_user_session_path
     end
@@ -89,7 +89,7 @@ RSpec.describe PostsController, type: :controller do
     it "should redirect to categories#index if the parent post is not found" do
       user = FactoryGirl.create(:user)
       sign_in user
-      post :reply, id: "not a real id", post: {message: "Nice post"}
+      post :reply, id: "not a real id", reply: {message: "Nice post"}
 
       expect(response).to redirect_to categories_path      
     end
@@ -99,7 +99,7 @@ RSpec.describe PostsController, type: :controller do
       sign_in user
 
       parent_post = FactoryGirl.create(:post)
-      post :reply, id: post, post: {message: "Nice post"}
+      post :reply, id: parent_post, reply: {message: "Nice post"}
 
       expect(response).to redirect_to post_path
       reply = parent_post.replies.last
