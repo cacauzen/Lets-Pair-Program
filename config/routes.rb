@@ -16,5 +16,9 @@ Rails.application.routes.draw do
 
   resources :users, only: :show
 
-  resources :posts, only: [:index, :show]
+  resources :posts, only: [:index, :show] do
+    member do
+      post :reply
+    end
+  end
 end
