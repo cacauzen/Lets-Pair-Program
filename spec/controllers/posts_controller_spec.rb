@@ -60,6 +60,7 @@ RSpec.describe PostsController, type: :controller do
       post = section.posts.last
       expect(post.title).to eq("Test Post")
       expect(post.message).to eq("Hello hello")
+      expect(post.user).to eq(user)
     end
   end
 

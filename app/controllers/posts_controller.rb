@@ -19,7 +19,7 @@ class PostsController < ApplicationController
     @section = Section.find_by_id(params[:section_id])
 
     unless @section.nil?
-      @post = @section.posts.create(post_params)
+      @post = @section.posts.create(post_params.merge(user: current_user))
     end      
       redirect_to posts_path
   end
