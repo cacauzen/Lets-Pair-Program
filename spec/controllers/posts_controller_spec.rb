@@ -24,12 +24,12 @@ RSpec.describe PostsController, type: :controller do
       expect(response).to redirect_to new_user_session_path
     end
 
-    it "should redirect to posts#index if the section is invalid" do
+    it "should redirect to categories#index if the section is invalid" do
       user = FactoryGirl.create(:user)
       sign_in user
 
       get :new, :section_id => "not a real section id"
-      expect(response).to redirect_to posts_path
+      expect(response).to redirect_to categories_path
     end
   end
 
@@ -40,12 +40,12 @@ RSpec.describe PostsController, type: :controller do
       expect(response).to redirect_to new_user_session_path
     end
 
-    it "should redirect to posts#index if the section is invalid" do
+    it "should redirect to categories#index if the section is invalid" do
       user = FactoryGirl.create(:user)
       sign_in user
 
       post :create, :section_id => "not a real session id", post: {title: "Test Post", message: "Hello hello"}
-      expect(response).to redirect_to posts_path
+      expect(response).to redirect_to categories_path
     end
 
     it "should successfully create a post" do
@@ -55,7 +55,7 @@ RSpec.describe PostsController, type: :controller do
 
       post :create, :section_id => section, post: {title: "Test Post", message: "Hello hello"}
 
-      expect(response).to redirect_to posts_path
+      expect(response).to redirect_to categories_path
 
       post = section.posts.last
       expect(post.title).to eq("Test Post")
@@ -74,7 +74,7 @@ RSpec.describe PostsController, type: :controller do
     it "should redirect to posts index if the post is not found" do
       section = FactoryGirl.create(:section)
       get :show, id: "not a real post"
-      expect(response).to redirect_to posts_path
+      expect(response).to redirect_to categories_path
     end
   end
 
