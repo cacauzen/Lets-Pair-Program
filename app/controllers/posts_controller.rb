@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :reply]
 
 	def index
     @categories = Category.all
@@ -9,7 +9,7 @@ class PostsController < ApplicationController
     @section = Section.find_by_id(params[:section_id])
 
     if @section.nil?
-      redirect_to posts_path
+      redirect_to categories_path
     else
       @post = Post.new
     end
@@ -21,20 +21,36 @@ class PostsController < ApplicationController
     unless @section.nil?
       @post = @section.posts.create(post_params.merge(user: current_user))
     end      
-      redirect_to posts_path
+      redirect_to categories_path
   end
 
   def show
     @post = Post.find_by_id(params[:id])
+    @reply = Post.new
 
     if @post.nil?
-      redirect_to posts_path
+      redirect_to categories_path
+    end
+  end
+
+  def reply
+    @post = Post.find_by_id(:id)
+
+    if @post.nil?
+      redirect_to categories_path
+    else
+      @reply = @post.replies.create(reply_params.merge(user: current_user)) 
+      redirect_to post_path(:id)
     end
   end
 
   private
   def post_params
     params.require(:post).permit(:title, :message)
+  end
+
+  def reply_params
+    params.require(:post).permit(:message)
   end
 
 end
