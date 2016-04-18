@@ -6,3 +6,20 @@
     <%= @post.message %>
   </p>
 </div>
+
+<% if user_signed_in? %>
+  <%= simple_form_for @reply, url: reply_post_path do |f| %>
+    <%= f.input :message, label: 'Reply' %>
+    <%= f.submit "Submit" %>
+  <% end %>
+<% end %>
+
+<hr />
+<div>
+  <% @post.replies.each do |reply| %>
+    <p>
+      <%= reply.message %>
+    </p>
+      -- <%= reply.user.email %>
+  <% end %>
+</div>
