@@ -76,7 +76,35 @@ RSpec.describe PostsController, type: :controller do
       get :show, id: "not a real post"
       expect(response).to redirect_to posts_path
     end
-
   end
 
+  describe "posts#reply action" do
+    it "should require a user to be logged in" do
+      parent_post = FactoryGirl.create(:post)
+      post :reply, id: post, post: {message: "Nice post"}
+
+      expect(response).to redirect_to new_user_session_path
+    end
+
+    it "should redirect to the post detail page if the parent post is not found" do
+      user = FactoryGirl.create(:user)
+      sign_in user
+      post :reply, id: "not a real id", post: {message: "Nice post"}
+
+      expect(response).to redirect_to post_path      
+    end
+
+    it "should successfully create a reply to the post" do
+      user = FactoryGirl.create(:user)
+      sign_in user
+
+      parent_post = FactoryGirl.create(:post)
+      post :reply, id: post, post: {message: "Nice post"}
+
+      expect(response).to redirect_to post_path
+      reply = parent_post.replies.last
+      expect(reply.message).to eq("Nice post")
+      expect(reply.user).to eq(user)
+    end    
+  end
 end
