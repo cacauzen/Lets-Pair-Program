@@ -31,6 +31,9 @@ Rails.application.configure do
   # ActionMailer::Base.deliveries array.
   config.action_mailer.delivery_method = :test
 
+  # Tells Action Mailer to use localhost for testing
+  config.action_mailer.default_url_options = {:host => 'localhost:3030'}
+
   # Randomize the order test cases are executed.
   config.active_support.test_order = :random
 
