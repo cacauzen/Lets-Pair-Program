@@ -2,21 +2,19 @@
   <h1 class="text-center"><%= current_category.name %></h1>
   <div class="text-center">
     <!-- Button trigger modal -->
-<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#SectionModal">
-  Add Section
-</button>
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#SectionModal">
+      Add Section
+    </button>
   </div>
   <ul>
     <% current_category.sections.each do |section| %>
-
-
       <li>
+        <h3><%= section.name %></h3>
+      </li>
+    <% end %>
+</div>
 
-       <h3><%= section.name %></h3>
-
-        <% end %>
-        </li>
-  <!-- Modal -->
+<!-- modal -->
 <div class="modal fade" id="SectionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -24,7 +22,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title" id="myModalLabel">Add Section</h4>
       </div>
-       <%= simple_form_for @section, url: category_sections_path(current_category) do |f| %>
+      <%= simple_form_for @section, url: category_sections_path(current_category) do |f| %>
         <div class="modal-body">
            <%= f.input :name %>
            <%= f.input :description %>
@@ -32,12 +30,8 @@
         <div class="modal-footer">
           <%= f.submit "Add a section", class: 'btn btn-primary' %>
         </div>
-        <% end %>
-
-
+      <% end %>
     </div>
   </div>
 </div>
-
-<!--End Modal-->
-</div>
+<!-- end modal -->
