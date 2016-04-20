@@ -306,3 +306,14 @@ p {
 .jupiter {
   margin-top: 10px;
 }
+
+/* MEDIA QUERIES */
+@media (max-width: 765px) {
+  #footer a {
+    font-size: 12px;
+    padding: 5px;
+  }
+  .flex-container {
+    margin-top: 5px;
+  }
+}
