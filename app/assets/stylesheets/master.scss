@@ -236,3 +236,17 @@ p {
 .modal-backdrop {
   z-index: 1030;
 }
+
+.dashboard{
+  background-color: #D1D1D1;
+  min-height: 200px;
+  padding: 30px;
+}
+.user-photo{
+  border-radius: 50%;
+  border: 5px solid #AAAAAA;
+  height: 150px;
+  width: 150px;
+  background:url(trump.jpg) center;
+  background-size: cover;
+}
