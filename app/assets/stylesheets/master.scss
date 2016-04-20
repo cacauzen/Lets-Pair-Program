@@ -9,7 +9,6 @@ body{
 html {
   width: 100%;
   min-height: 100%;
-  position: relative;
 }
 .alert{
   position: absolute;
@@ -94,7 +93,8 @@ p {
 .splash {
   display: table;
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
+  padding: 200px 0;
   text-align: center;
   color: #fff;
   background:url(splashphoto.jpeg) no-repeat bottom center scroll;
@@ -103,11 +103,14 @@ p {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
+  height: 470px;
 }
+
 
 .splashbody {
   display: table-cell;
   vertical-align: middle;
+  height: inherit;
 }
 
 .splashtitle {
@@ -230,4 +233,3 @@ p {
   background: black;
   opacity: 0.8;
 }
-

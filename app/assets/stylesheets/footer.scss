@@ -42,19 +42,6 @@ p {
   color: #8b9f23;
   text-decoration: none;
 }
-/*Code for Sticky footer using Flexbox*/
-.Site {
-  display: inline-table;
-  min-height: 100vh;
-  position: relative;
-  padding-bottom: 30px;
-}
-
-.Site-content {
-  flex: 1;
-  overflow: scroll;
-}
-/*End Code for Sticky footer using Flexbox*/
 
 .line {
   width:60%;
