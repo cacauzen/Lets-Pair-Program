@@ -17,41 +17,6 @@ p {
     font-size: 15px;
     line-height: 1.5;
 }
-.alert{
-  position: absolute;
-  z-index: 200;
-  height: 45px;
-  border-radius: 0;
-}
-.navbar-default {
-    background-color: #1D1F20;
-    border: transparent !important;
-}
-.navbar-default .container-fluid{
-  background-color: #1D1F20;
-}
-.navbar-default .navbar-collapse, .navbar-default .navbar-form{
-  background-color: #1D1F20;
-  border-radius: 0;
-	background-image: none;
-  height: 60px;
-  padding-top: 5px;
-  border: transparent;
-}
-
-.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand{
-  color: #8b9f23;
-  font-size: 25px;
-  font-weight: bold;
-}
-.navbar-nav>li>a {
-  color: #363a3c;
-  text-transform: uppercase;
-  font-weight: normal;
-}
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-      color: #8b9f23 !important;
-}
 
 #footer {
   height: 180px;
@@ -95,14 +60,6 @@ p {
   width:60%;
   border:0px none white;
   border-top:2px solid #76803F;
-}
-
-h1 {
-    margin: 0 0 35px;
-    text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
-    letter-spacing: 1px;
 }
 
 .social {
@@ -166,122 +123,14 @@ h1 {
     background: #343434;
 }
 
-.splash {
-    display: table;
-    width: 100%;
-    min-height: 100vh;
-    text-align: center;
-    color: #fff;
-    background:url(splashphoto.jpeg) no-repeat bottom center scroll;
-    background-color: #000;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-}
 
-.splashbody {
-    display: table-cell;
-    vertical-align: middle;
-}
-
-.splashtitle {
-    font-size: 100px;
-    border: 3px solid #FFFFFF;
-    width:auto;
-    background-color: rgba(54, 58, 60, 0.5);
-}
-
-.splash_two {
-    display: table;
-    width: 100%;
-    height: 100%;
-    padding: 200px 0;
-    text-align: center;
-    color: #fff;
-    background:url(27code.jpg) no-repeat bottom center scroll;
-    background-color: #000;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-}
-
-.splash_three {
-    display: table;
-    width: 100%;
-    height: 100%;
-    padding: 200px 0;
-    text-align: center;
-    color: #fff;
-    background:url(19code.jpg) no-repeat bottom center scroll;
-    background-color: #000;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-}
-
-.splash_four {
-    display: table;
-    width: 100%;
-    height: 100%;
-    padding: 200px 0;
-    text-align: center;
-    color: #fff;
-    background:url(coding5.jpg) no-repeat bottom center scroll;
-    background-color: #000;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-}
-
-.splash_five {
-    display: table;
-    width: 100%;
-    height: 100%;
-    padding: 200px 0;
-    text-align: center;
-    color: #fff;
-    background:url(coding4.jpg) no-repeat bottom center scroll;
-    background-color: #000;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-}
-
-.slogantext {
-    font-size: 20px;
-}
-
-.clr {
-    clear:both;
-}
-
-.listbox{
-
-    background: #fff;
-    box-shadow: 1px 2px 2px rgba(0,0,0,0.06);
-    border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
-    border-radius:4px;
-    margin-top:40px;
-    padding: 20px 20px 20px;
-    -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
-  -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
-}
-
-.btn.btn-info{
-  background-color: #8b9f23;
-  border: none;
-  border-radius: 3px;
-}
-.btn.btn-info:hover{
-  background-color: #1D1F20;
-  color: #76803F;
-}
-
-.big-button{
-  width: 350px;
+/* FOOTER MEDIA QUERIES */
+@media (max-width: 765px) {
+  #footer a {
+    font-size: 12px;
+    padding: 5px;
+  }
+  .flex-container {
+    margin-top: 5px;
+  }
 }
