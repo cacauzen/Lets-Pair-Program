@@ -1,10 +1,10 @@
-<div>
+<div class="col-xs-10 col-xs-offset-1">
   <h2>Add a New Post</h2>
   <br />
 
   <%= simple_form_for @post, url: section_posts_path do |f| %>
     <%= f.input :title %>
-    <%= f.input :message %>
+    <%= f.input :message, as: :pagedown, input_html: { preview: true, rows: 10 } %>
     <%= f.submit "Submit" %>
   <% end %>
 
