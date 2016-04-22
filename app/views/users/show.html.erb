@@ -1,3 +1,14 @@
-<h3><%= @user.email %> </h3>
+<div class="dashboard">
+  <div class="col-md-10 col-md-offset-2">
+    <div class="col-md-6">
+      <div class="user-photo img img-reponsive">
 
-<h4> Member Since: <%= @user.created_at.strftime("%B %d, %Y") %></h4>
+      </div>
+    </div>
+    <div class="col-md-6">
+    <br />
+      <h3><%= @user.email %> </h3>
+      <h4> Member Since: <%= @user.created_at.strftime("%B %d, %Y") %></h4>
+    </div>
+  </div>
+</div>

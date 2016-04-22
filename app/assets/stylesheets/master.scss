@@ -168,7 +168,6 @@ p {
 .splash_five {
   display: table;
   width: 100%;
-  height: 100%;
   padding: 200px 0;
   text-align: center;
   color: #fff;
@@ -178,7 +177,7 @@ p {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  height: 470px;
+  height: 150px;
 }
 
 .slogantext {
@@ -236,4 +235,18 @@ p {
 
 .modal-backdrop {
   z-index: 1030;
+}
+
+.dashboard{
+  background-color: #D1D1D1;
+  min-height: 200px;
+  padding: 30px;
+}
+.user-photo{
+  border-radius: 50%;
+  border: 5px solid #AAAAAA;
+  height: 150px;
+  width: 150px;
+  background:url(trump.jpg) center;
+  background-size: cover;
 }
