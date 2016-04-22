@@ -17,7 +17,7 @@
     <div id="category<%=category.id%>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<%=category.id%>">
         <% category.sections.each do |section| %>
           <div class="list-group">
-            <p> <%= section.name %> - <span><%= link_to "add post", new_section_post_path(section)%></span></p>
+            <p> <%= link_to "Section name", post_path(section.id) %> - <span><%= link_to "add post", new_section_post_path(section)%></span></p>
           </div>
         <% end %>
     </div>
