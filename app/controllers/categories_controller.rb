@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create,:index]
+  before_action :authenticate_user!, only: [:index]
+  before_action :confirm_admin, only: [:new,:create]
  
 
   def new
