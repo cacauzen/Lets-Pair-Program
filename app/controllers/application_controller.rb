@@ -4,8 +4,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
   def confirm_admin
-    unless current_user.admin?
-      flash[:alert] = "Test not Admin" 
+    unless current_user.try(:admin?)
+      flash[:alert] = "User doesn't have required permissions"
       redirect_to root_path
     end
   end
