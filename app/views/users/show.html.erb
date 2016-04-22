@@ -1,9 +1,10 @@
 <div class="dashboard">
   <div class="col-md-10 col-md-offset-2">
     <div class="col-md-6">
-      <div class="user-photo img img-reponsive">
 
-      </div>
+        <%= image_tag @user.gravatar_url, :class => "user-photo" %>
+
+  
     </div>
     <div class="col-md-6">
     <br />
