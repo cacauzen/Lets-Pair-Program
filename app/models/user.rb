@@ -4,7 +4,8 @@ class User < ActiveRecord::Base
   has_many :posts
 
   include Gravtastic
-  gravtastic
+  gravtastic :size => 200
+
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

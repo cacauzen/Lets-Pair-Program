@@ -1,5 +1,6 @@
 class SectionsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:index]
+  before_action :confirm_admin, only: [:new,:create]
 
   def new
     @section = Section.new
