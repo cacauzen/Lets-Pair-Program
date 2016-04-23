@@ -5,7 +5,7 @@
   <%= simple_form_for @post, url: section_posts_path do |f| %>
     <%= f.input :title %>
     <%= f.input :message, as: :pagedown, input_html: { preview: true, rows: 10 } %>
-    <%= f.submit "Submit" %>
+    <%= f.submit "SUBMIT", class: "btn btn-info"  %>
   <% end %>
 
 </div>

@@ -23,7 +23,7 @@
   <% if user_signed_in? %>
     <%= simple_form_for @reply, url: reply_post_path do |f| %>
       <%= f.input :message, label: 'Reply', as: :pagedown, input_html: { rows: 10 } %>
-      <%= f.submit "Submit" %>
+      <%= f.submit "SUBMIT", class: "btn btn-info" %>
     <% end %>
   <% end %>
 

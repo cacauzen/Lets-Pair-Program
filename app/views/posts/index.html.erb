@@ -8,7 +8,7 @@
       <h2><%= section.name %></h2>
 
         <% section.posts.each do |post| %>
-          <h3><%= post.title %></h3>
+          <h3><%= link_to post.title, post_path(post) %></h3>
         <% end %>
 
     <% end %>

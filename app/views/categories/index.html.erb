@@ -3,15 +3,16 @@
 
 <!--Testing accordion feature-->
 
-<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+<div class="panel-group custom" id="accordion" role="tablist" aria-multiselectable="true">
   <% @category.each do |category| %>
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="heading<%=category.id%>">
       <h4 class="panel-title">
           <%= link_to category.name, "#category#{category.id}", role: :button,
           data: { parent: '#accordion', toggle: :collapse },
-          aria: { controls: "collapse#{category.id}", expanded: true } %>
+          aria: { controls: "icon-indicator", expanded: true } %>
           - <span><%= link_to "add section", category_path(category) %></span>
+          <span class="glyphicon icon-indicator pull-right"></span>
       </h4>
     </div>
     <div id="category<%=category.id%>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<%=category.id%>">
