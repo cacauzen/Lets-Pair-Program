@@ -1,12 +1,12 @@
 <div class="dashboard">
   <div class="col-md-10 col-md-offset-2">
-    <div class="col-md-6">
+    <div class="col-sm-12 col-md-4">
         <%= image_tag @user.gravatar_url, :class => "user-photo" %>
     </div>
-    <div class="col-md-6">
+    <div class="col-sm-8 col-md-6">
     <br />
-      <h3><%= @user.email %> </h3>
-      <h4> Member Since: <%= @user.created_at.strftime("%B %d, %Y") %></h4>
+      <h3 class= "text-center"><%= @user.email %> </h3>
+      <h4 class= "text-center"> Member Since: <%= @user.created_at.strftime("%B %d, %Y") %></h4>
     </div>
   </div>
 </div>
