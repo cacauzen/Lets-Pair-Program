@@ -28,7 +28,7 @@ RSpec.describe CategoriesController, type: :controller do
       assert user.admin?
       
       post :create, category: {name: 'News', description: "A place for news"}
-      expect(response).to redirect_to root_path
+      expect(response).to redirect_to categories_path
 
       category = Category.last
       expect(category.name).to eq("News")
