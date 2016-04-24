@@ -318,7 +318,7 @@ p {
     border-radius: 0 !important;
     margin: 0 !important;
     padding: 15px;
-    background-color: #D1D1D1 !important;
+    background-color: #B7B7B7 !important;
     border-left: 10px solid #1D1F20 !important;
     outline: none;
     border-radius: 0;
@@ -328,6 +328,18 @@ p {
   .panel-heading a:hover{
     font-weight: bolder;
   }
+
+  .nested-panel-heading {
+    border-radius: 0 !important;
+    margin: 0 !important;
+    padding: 15px;
+    background-color: #D1D1D1 !important;
+    border-left: 10px solid #636A6E !important;
+    outline: none;
+    border-radius: 0;
+    text-transform: uppercase;
+  }
+
   .panel-default {
     background-color: #F5F5F5 !important;
     margin: 0px !important;
