@@ -10,7 +10,7 @@ class SectionsController < ApplicationController
     @section = current_category.sections.create(section_params)
 
     if @section.valid?
-      redirect_to root_path
+      redirect_to category_path(current_category)
     else
       render :new, status: :unprocessable_entity
     end
