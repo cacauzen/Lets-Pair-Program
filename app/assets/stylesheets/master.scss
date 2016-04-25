@@ -320,11 +320,11 @@ p {
     text-decoration: none !important;
   }
 
-  .listbox, .panel-heading{
+  .listbox, .panel-heading{ // category heading 
     border-radius: 0 !important;
     margin: 0 !important;
     padding: 15px;
-    background-color: #D1D1D1 !important;
+    background-color: #8b9f23 !important;
     border-left: 10px solid #1D1F20 !important;
     outline: none;
     border-radius: 0;
@@ -334,6 +334,32 @@ p {
   .panel-heading a:hover{
     font-weight: bolder;
   }
+
+
+  .nested-panel-heading  { // section heading 
+    border-radius: 0 !important;
+    margin: 0 !important;
+    padding: 15px;
+    background-color: #D1D1D1 !important;
+    border-left: 10px solid #535F15 !important; // indentation marker before section heading
+    outline: none;
+    border-radius: 0;
+    text-transform: uppercase;
+
+    .panel-title a {
+      color: #535F15 !important;
+    }
+
+    .panel-title span a {
+    font-size: 10px;
+    font-weight: bold;
+    color: #EEEEEE !important;
+    border-radius: 18px;
+    background-color: #5d6367;
+    padding: 8px 10px;
+    }
+  }
+
   .panel-default {
     background-color: #F5F5F5 !important;
     margin: 0px !important;
@@ -347,6 +373,7 @@ p {
   .panel-collapse>a{
     padding-left: 20px !important;
   }
+
   .panel-title>a{
     color: #1D1F20 !important;
     font-weight: bolder;
@@ -356,7 +383,7 @@ p {
     font-weight: bold;
     color: #EEEEEE !important;
     border-radius: 18px;
-    background-color: #C0C0C0;
+    background-color: #535F15;
     padding: 8px 10px;
   }
   .panel-title span a:hover {
