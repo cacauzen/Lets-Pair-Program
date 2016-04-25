@@ -300,7 +300,13 @@ p {
 .list-group span a:hover {
   background-color: #8B9F23;
 }
-
+.title h2 a{
+  color: #8B9F23 !important;
+}
+.title h2 a:hover {
+  text-decoration: none;
+  color: #8B9F23 !important;
+}
 .custom {
   outline: none !important;
   border-radius: 0 !important;

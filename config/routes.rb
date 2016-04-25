@@ -6,12 +6,12 @@ Rails.application.routes.draw do
   get 'press' => 'static_pages#press'
   get 'terms' => 'static_pages#terms'
 
-  resources :categories, only: [:new, :create, :index,:show] do
+  resources :categories, only: [:new, :create, :index, :show] do
     resources :sections, only: [:new, :create]
   end
 
   resources :sections, only: [:index] do
-    resources :posts, only: [:new, :create]
+    resources :posts, only: [:new, :create, :index]
   end
 
   resources :users, only: :show
