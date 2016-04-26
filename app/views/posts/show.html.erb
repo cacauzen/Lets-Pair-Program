@@ -1,3 +1,14 @@
+<script>
+  $(function() {
+    $('.wmd-output').each(function(i) {
+      var converter = new Markdown.Converter();
+      Markdown.Extra.init(converter);
+      var content = $.trim($(this).text());
+      $(this).html(converter.makeHtml(content));
+    });
+  });
+</script>
+
 <br />
 <br />
 <div class="col-xs-10 col-xs-offset-1">
@@ -5,7 +16,7 @@
     <h2>
       <%= @post.title %>
     </h2>
-    <p>
+    <p class="wmd-output">
       <%= @post.message %>
     </p>
     <% if user_signed_in? %>
@@ -21,7 +32,7 @@
     <div>
       <h4>Replies</h4>
       <% @post.replies.each do |reply| %>
-        <p>
+        <p class="wmd-output">
           <%= reply.message %>
         </p>
           -- <%= reply.user.email %>
