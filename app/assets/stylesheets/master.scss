@@ -289,6 +289,10 @@ p {
   padding-left: 5px !important;
   margin: 15px !important;
 }
+.list-group p.post-description {
+  color: #A9A9A9;
+  font-size: 12px;
+}
 .list-group p:hover{
   border-left: 4px solid #8B9F23;
 }
@@ -303,13 +307,7 @@ p {
 .list-group span a:hover {
   background-color: #8B9F23;
 }
-.title h2 a{
-  color: #8B9F23 !important;
-}
-.title h2 a:hover {
-  text-decoration: none;
-  color: #8B9F23 !important;
-}
+
 .custom {
   outline: none !important;
   border-radius: 0 !important;
@@ -378,7 +376,7 @@ p {
   }
 
   .panel-title>a{
-    color: rgba(255,255,255,.7) !important;
+    color: #1D1F20 !important;
     font-weight: bolder;
   }
   .panel-title span a {

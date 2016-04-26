@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <script type="text/javascript">
 $(function() {
 $('.wmd-output').each(function(i) {
@@ -6,32 +7,50 @@ $('.wmd-output').each(function(i) {
   $(this).html(converter.makeHtml(content));
 });
 });
+=======
+<script>
+  $(function() {
+    $('.wmd-output').each(function(i) {
+      var converter = new Markdown.Converter();
+      Markdown.Extra.init(converter);
+      var content = $.trim($(this).text());
+      $(this).html(converter.makeHtml(content));
+    });
+  });
+>>>>>>> 408c01ab58d457508c1a5131362d86e44e4a88d5
 </script>
 
 <br />
 <br />
 <div class="col-xs-10 col-xs-offset-1">
-  <div class="col-md-6">
+  <div class="post-box col-md-6">
     <h2>
       <%= @post.title %>
     </h2>
-    <p>
+    <hr />
+    <p class="wmd-output">
       <%= @post.message %>
     </p>
-    <% if user_signed_in? %>
-      <%= simple_form_for @reply, url: reply_post_path do |f| %>
-        <%= f.input :message, label: 'Reply', as: :pagedown, input_html: { rows: 10 } %>
-        <%= f.submit "SUBMIT", class: "btn btn-info" %>
-      <% end %>
-    <% end %>
   </div>
+
+  <br class = "clr" />
   <br />
+
+  <% if user_signed_in? %>
+    <%= simple_form_for @reply, url: reply_post_path do |f| %>
+      <%= f.input :message, label: 'Reply', as: :pagedown, input_html: { rows: 10 } %>
+      <%= f.submit "SUBMIT", class: "btn btn-info" %>
+    <% end %>
+  <% end %>
+
+  <br class = "clr" />
   <br />
+
   <div class="col-md-6">
     <div>
       <h4>Replies</h4>
       <% @post.replies.each do |reply| %>
-        <p>
+        <p class="wmd-output">
           <%= reply.message %>
         </p>
           -- <%= reply.user.email %>
