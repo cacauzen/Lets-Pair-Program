@@ -2,18 +2,18 @@
   <h1 class="text-center"><%= current_category.name %></h1>
   <div class="text-center">
     <!-- Button trigger modal -->
-    <% if current_user.admin %>
+<% if current_user.admin %>
     <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#SectionModal">
       Add Section
     </button>
-    <% end %>
+<% end %> 
   </div>
   <ul>
     <% current_category.sections.each do |section| %>
       <li>
         <h3><%= section.name %></h3>
       </li>
-    <% end %>
+   <% end %>
 </div>
 
 <!-- modal -->

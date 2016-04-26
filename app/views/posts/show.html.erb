@@ -1,3 +1,13 @@
+<script type="text/javascript">
+$(function() {
+$('.wmd-output').each(function(i) {
+  var converter = new Markdown.Converter();
+  var content = $(this).html();
+  $(this).html(converter.makeHtml(content));
+});
+});
+</script>
+
 <br />
 <br />
 <div class="col-xs-10 col-xs-offset-1">

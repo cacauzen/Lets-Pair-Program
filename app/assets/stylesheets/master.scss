@@ -320,7 +320,7 @@ p {
     text-decoration: none !important;
   }
 
-  .listbox, .panel-heading{ // category heading 
+  .listbox, .panel-heading{ // category heading
     border-radius: 0 !important;
     margin: 0 !important;
     padding: 15px;
@@ -336,7 +336,7 @@ p {
   }
 
 
-  .nested-panel-heading  { // section heading 
+  .nested-panel-heading  { // section heading
     border-radius: 0 !important;
     margin: 0 !important;
     padding: 15px;
@@ -375,7 +375,7 @@ p {
   }
 
   .panel-title>a{
-    color: #1D1F20 !important;
+    color: rgba(255,255,255,.7) !important;
     font-weight: bolder;
   }
   .panel-title span a {
