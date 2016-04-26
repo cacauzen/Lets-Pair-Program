@@ -43,6 +43,8 @@
           <% section.posts.each do |post| %>
             <div class="list-group">
               <p> <%= link_to post.title, post_path(post) %> </p>
+              <p class="post-description"> Posted: <%= time_ago_in_words(post.created_at) %> ago </p>
+              
             </div>
           <% end %>
         <% end %>
