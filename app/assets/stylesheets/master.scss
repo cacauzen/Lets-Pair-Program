@@ -59,14 +59,14 @@ h1 {
 }
 
 .terms p {
-  font-size: 10px;
+  font-size: 20px;
   padding-left: 25px;
   padding-right: 25px;
 }
 
 
 .terms h2 {
-  font-size: 18px;
+  font-size: 35px;
   text-transform: uppercase;
   font-family: Lora,"Helvetica Neue",Helvetica,Arial,sans-serif;
   padding-left: 25px;
@@ -74,14 +74,14 @@ h1 {
 }
 
 .terms h3 {
-  font-size: 13px;
+  font-size: 23px;
   font-family: Lora,"Helvetica Neue",Helvetica,Arial,sans-serif;
   padding-left: 25px;
   padding-right: 25px;
 }
 
 .terms li {
-  font-size: 10px;
+  font-size: 20px;
   font-family: Lora,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
@@ -224,16 +224,19 @@ p {
 .about {
   background: black;
   opacity: 0.8;
+  border: 2px solid #FFFFFF;
 }
 
 .contact {
   background: black;
   opacity: 0.8;
+  border: 2px solid #FFFFFF;
 }
 
 .press {
   background: black;
   opacity: 0.8;
+  border: 2px solid #FFFFFF;
 }
 
 .modal-backdrop {
