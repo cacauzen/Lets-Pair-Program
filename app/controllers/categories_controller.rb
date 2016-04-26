@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create,:index]
+  before_action :authenticate_user!, only: [:index]
+  before_action :confirm_admin, only: [:new,:create]
  
 
   def new
@@ -20,7 +21,7 @@ class CategoriesController < ApplicationController
     @category = Category.create(category_params)
     
     if @category.valid?
-      redirect_to root_path
+      redirect_to categories_path
     else
       render :new, status: :unprocessable_entity
     end
