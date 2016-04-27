@@ -20,7 +20,7 @@ class PostsController < ApplicationController
 
     unless @section.nil?
       @post = @section.posts.create(post_params.merge(user: current_user))
-    end      
+    end
       redirect_to categories_path
   end
 
