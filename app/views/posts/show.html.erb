@@ -38,7 +38,7 @@
           be the first to reply
         </p>
       <% else %>
-      <% @post.replies.reverse_each do |reply| %>
+      <% @post.replies.each do |reply| %>
         <p class="wmd-output">
           <%= reply.message %>
         </p>
