@@ -12,7 +12,7 @@
 <br />
 <br />
 <div class="col-xs-10 col-xs-offset-1">
-  <div class="col-md-6">
+  <div class="col-lg-6 col-sm-12">
     <div class="">
       <h2>
         <%= @post.title %>
@@ -30,7 +30,7 @@
     <% end %>
   </div>
 
-  <div class="col-md-6">
+  <div class="col-lg-6 col-sm-12">
     <h2>Replies</h2>
     <div class="replies">
       <% if @post.replies.empty? %>
@@ -42,9 +42,9 @@
         <p class="wmd-output">
           <%= reply.message %>
         </p>
-          -- <%= reply.user.email %>
+        <span class="user-mail"><%= reply.user.email %></span>
         <br />
-        <hr>
+        <hr class="reply-line">
         <br />
       <% end %>
       <% end %>
