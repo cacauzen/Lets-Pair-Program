@@ -21,11 +21,11 @@ class SectionsController < ApplicationController
     params.require(:section).permit(:name, :description)
   end
 
-  
+
   def current_category
     @current_category = Category.find(params[:category_id])
   end
-  
-  
+
+
 
 end

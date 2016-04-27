@@ -4,7 +4,7 @@ body{
   font-family: Lora,"Helvetica Neue",Helvetica,Arial,sans-serif;
   background:url(greyBack.png);
   padding-top:50px;
-  padding-bottom: 130px;
+  padding-bottom: 180px;
 }
 html {
   width: 100%;
@@ -97,6 +97,7 @@ p {
   height: 100%;
   padding: 200px 0;
   margin-top: -30px;
+  margin-bottom: -50px;
   text-align: center;
   color: #fff;
   background:url(space.jpg) no-repeat bottom center scroll;
@@ -321,7 +322,7 @@ p {
     text-decoration: none !important;
   }
 
-  .listbox, .panel-heading{ // category heading 
+  .listbox, .panel-heading{ // category heading
     border-radius: 0 !important;
     margin: 0 !important;
     padding: 15px;
@@ -337,7 +338,7 @@ p {
   }
 
 
-  .nested-panel-heading  { // section heading 
+  .nested-panel-heading  { // section heading
     border-radius: 0 !important;
     margin: 0 !important;
     padding: 15px;
@@ -390,6 +391,15 @@ p {
   .panel-title span a:hover {
     background-color: #8B9F23;
   }
+}
+.replies{
+  background-color: rgba(255,255,255,.6);
+  height: 483px;
+  overflow: scroll;
+  padding: 30px 20px 20px 50px;
+}
+.bottom{
+  margin-bottom: 0;
 }
 
 /*MEDIA QUERIES*/
