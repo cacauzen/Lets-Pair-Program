@@ -10,6 +10,11 @@ html {
   width: 100%;
   min-height: 100%;
 }
+
+.clr {
+  clear:both;
+}
+
 .alert{
   position: absolute;
   z-index: 200;
@@ -186,10 +191,6 @@ p {
 .slogantext {
   font-size: 17px;
   text-transform: uppercase;
-}
-
-.clr {
-  clear:both;
 }
 
 .listbox{
